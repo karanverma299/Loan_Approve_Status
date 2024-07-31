@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loan Approve predicition</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        .form-container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .form-container input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .result {
+            font-size: 1.5em;
+            color: #4CAF50;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>loan prediction</h2>
+        <form action="/predict" method="post">
+            <label for="gender">gender  (for male 1, for female 2):</label>
+            <input type="number" name="gender" required>
+            
+            <label for="married">married:</label>
+            <input type="number"  name="married" required>
+            
+            <label for="Dependents">Dependents:</label>
+            <input type="number" name="Dependents" required>
+            
+            <label for="Education">Education:</label>
+            <input type="number" name="Education" required>
+            
+            <label for="Self_Employed">Self_Employed	:</label>
+            <input type="number" step="0.01" name="Self_Employed	" required>
+            
+            <label for="ApplicantIncome">ApplicantIncome:</label>
+            <input type="number" name="ApplicantIncome" required>
+            
+            <label for="CoapplicantIncome">CoapplicantIncome:</label>
+            <input type="number" name="CoapplicantIncome" required>
+            
+            <label for="LoanAmount">LoanAmount:</label>
+            <input type="number" name="LoanAmount" required>
+            
+            <label for="Loan_Amount_Term">Loan_Amount_Term:</label>
+            <input type="number" name="Loan_Amount_Term" required>
+            
+            <label for="Credit_History">Credit_History:</label>
+            <input type="number" name="Credit_History" required>
+            
+            <label for="Property_Area">Property_Area:</label>
+            <input type="number" name="Property_Area" required>
+            
+            <input type="submit" value="Predict">
+        </form>
+        {% if prediction_text %}
+        <div class="result">{{ prediction_text }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
