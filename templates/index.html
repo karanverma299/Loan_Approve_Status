@@ -44,19 +44,19 @@
         <h2>loan prediction</h2>
         <form action="/predict" method="post">
             <label for="gender">gender:</label>
-            <input type="number" name="gender" required>
+            <input type="text" name="gender" required>
             
             <label for="married">married:</label>
-            <input type="number"  name="married" required>
+            <input type="text"  name="married" required>
             
             <label for="Dependents">Dependents:</label>
             <input type="number" name="Dependents" required>
             
             <label for="Education">Education:</label>
-            <input type="number" name="Education" required>
+            <input type="text" name="Education" required>
             
             <label for="Self_Employed">Self_Employed	:</label>
-            <input type="number" step="0.01" name="Self_Employed	" required>
+            <input type="text" step="0.01" name="Self_Employed	" required>
             
             <label for="ApplicantIncome">ApplicantIncome:</label>
             <input type="number" name="ApplicantIncome" required>
@@ -74,7 +74,7 @@
             <input type="number" name="Credit_History" required>
             
             <label for="Property_Area">Property_Area:</label>
-            <input type="number" name="Property_Area" required>
+            <input type="text" name="Property_Area" required>
             
             <input type="submit" value="Predict">
         </form>
